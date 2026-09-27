@@ -1,0 +1,187 @@
+{
+  "schema_version": "0.1",
+  "id": "brand-machines",
+  "name": "Brand Machines",
+  "version": "0.2.0",
+  "sources": [
+    {
+      "id": "method",
+      "title": "Brand Machines framework",
+      "path": "sources/method.md",
+      "sha256": "46acd1005b8ef1a08f7e233e83e404e454aca4b97a99db5e6b4074d20f8f340c"
+    },
+    {
+      "id": "editorial",
+      "title": "Brand Machines editorial identity",
+      "path": "sources/editorial.md",
+      "sha256": "72085130bdb84f3c75493c1eb58164825db49bba15214a27c9fcd6be6e737f1b"
+    },
+    {
+      "id": "chapter17",
+      "title": "Chapter 17 validation example",
+      "path": "sources/chapter17.md",
+      "sha256": "cb5fc205dbdb508b4a1825c5d0554138f13143739872befd6a1fec484f107286"
+    }
+  ],
+  "layers": [
+    {
+      "id": 1,
+      "name": "Core",
+      "summary": "The method’s definition and principles form the basis of the editorial identity.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mind",
+      "summary": "Decisions are checked against the canon, vocabulary, sources and conceptual dependencies.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Body",
+      "summary": "The editorial system has a versioned design system, components and production tools.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Skin",
+      "summary": "Expression is editorial, precise and restrained; its form adapts to the medium.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Engines",
+      "summary": "Editorial production maintains generation, review and updates with defined functions.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Brand OS",
+      "summary": "Decisions, permissions and versions coordinate production without silently altering the canon.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Interconnections",
+      "summary": "The agent edition lets external tools consult and apply the method.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "canon",
+      "layer": 1,
+      "name": "Conceptual fidelity",
+      "definition": "Preserve the method’s definitions and relationships when changing format.",
+      "situations": [
+        "Explaining the method",
+        "Adapting it for agents",
+        "Reviewing a proposal"
+      ],
+      "tradeoff": "Sacrifice simplification when it destroys a distinction in the canon.",
+      "example": "Present all seven layers with their names and functions intact.",
+      "counterexample": "Replace Interconnections with another layer and claim it is the book’s framework.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": "evidence",
+      "layer": 2,
+      "name": "Supported claims",
+      "definition": "Distinguish verifiable data, inferences and pending decisions.",
+      "situations": [
+        "Performance claims",
+        "Brand cases",
+        "Commercial promises"
+      ],
+      "tradeoff": "Sacrifice a stronger claim when it lacks support.",
+      "example": "Request the source of a result before stating it as fact.",
+      "counterexample": "Invent a sales figure to make a presentation more persuasive.",
+      "sources": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "voice",
+      "layer": 4,
+      "name": "Editorial precision",
+      "definition": "Express a concrete idea in Brand Machines’ editorial voice.",
+      "situations": [
+        "email_subject",
+        "marketing_copy",
+        "Editorial presentation"
+      ],
+      "tradeoff": "Sacrifice promotional emphasis when it replaces precision.",
+      "example": "Describe what a tool does and the limits of its checks.",
+      "counterexample": "Promise absolute superiority without a verifiable comparison.",
+      "sources": [
+        "editorial",
+        "chapter17"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "no_superlativos",
+      "kind": "forbidden_terms",
+      "principle": "voice",
+      "contexts": [
+        "email_subject",
+        "marketing_copy"
+      ],
+      "message": "A promotional expression requires review.",
+      "suggestion": "Replace unsupported superiority with a concrete, verifiable description.",
+      "terms": [
+        "the best",
+        "market leader",
+        "best-in-class"
+      ]
+    },
+    {
+      "id": "exclamaciones_excesivas",
+      "kind": "max_exclamations",
+      "principle": "voice",
+      "contexts": [
+        "email_subject",
+        "marketing_copy"
+      ],
+      "message": "Emphasis exceeds the threshold of this editorial demonstration.",
+      "suggestion": "Reduce emphasis and review the precision of the message.",
+      "maximum": 2
+    },
+    {
+      "id": "siete_capas",
+      "kind": "canonical_layers",
+      "principle": "canon",
+      "contexts": [
+        "*"
+      ],
+      "message": "The declared architecture does not match the seven canonical layers.",
+      "suggestion": "Preserve Core, Mind, Body, Skin, Engines, Brand OS and Interconnections."
+    }
+  ],
+  "language": "en"
+}

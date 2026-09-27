@@ -1,8 +1,7 @@
 {
   "author": "Viktor Berthelius",
   "method": "Brand Machines",
-  "language": "es",
-  "agent_edition": "0.1.0",
+  "agent_edition": "0.2.0",
   "source_snapshot": "2026-09-27",
   "source_commit": "82000712d3d8dc662010e1645f0ad8c77a256768",
   "note": "Fuentes del manuscrito privado. Esta distribución contiene una adaptación operativa y extractos limitados, no el libro completo. Los hashes identifican la fuente editorial; no dan acceso al manuscrito.",
@@ -46,6 +45,30 @@
     {
       "path": "book/chapters/part-05/23-marcas-autonomas.qmd",
       "sha256": "10ec1c09d0c850fb3ee7eccc9547bdc22f9c878593f92754d5fd737e6001846e"
+    }
+  ],
+  "languages": [
+    "es",
+    "en"
+  ],
+  "english_source_commit": "a7fa0a526ce8614c1dda7f3050725eb2a1f54806",
+  "english_note": "English operational translation aligned with the English book’s approved canon and glossary. Machine keys, statuses and rule IDs are shared across languages. The complete manuscript remains private.",
+  "english_sources": [
+    {
+      "path": "en/editorial/canon.md",
+      "sha256": "a1f636bab1cd5c01f5669f72acedd6126c1e904ab1801736e994c83bf2594bfb"
+    },
+    {
+      "path": "en/editorial/glossary.md",
+      "sha256": "e21df436fc67a9339d5a41c30d80177faaa95e8adcec1a9c9488510b4a848a57"
+    },
+    {
+      "path": "editorial/translation-en/terminology.json",
+      "sha256": "547f36b854021e37bb4c83fbb5307ded31da2580f45a1c1dd2a858e0dcb3c581"
+    },
+    {
+      "path": "en/chapters/part-03/17-interconexion.qmd",
+      "sha256": "e6233b715f26e4f2950bb18bf023449e2106ec73414588d60d2f200d794378db"
     }
   ]
 }

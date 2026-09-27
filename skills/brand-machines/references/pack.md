@@ -5,6 +5,7 @@ El archivo `brand.json` es un formato local de esta implementación. No declara 
 | Campo | Contenido |
 |---|---|
 | `schema_version` | `"0.1"` |
+| `language` | `"es"` o `"en"`; opcional, por compatibilidad los paquetes antiguos son ES |
 | `id`, `name`, `version` | Identificador, nombre y versión de la marca |
 | `sources` | Fuentes locales con `id`, `title`, `path`, `sha256`; `valid_until` opcional (AAAA-MM-DD) |
 | `layers` | Siete objetos ordenados: `id` 1–7, `name` canónico, `summary`, `sources` |
@@ -14,6 +15,14 @@ El archivo `brand.json` es un formato local de esta implementación. No declara 
 Los seis campos de un valor operable son los del capítulo 11. Los IDs, referencias y metadatos de versión son convenciones de implementación. Las capas y los principios pueden quedar sin fuentes durante el diagnóstico; el Guardián devolverá `needs_evidence`. Una capa desconocida conserva su nombre y un `summary` vacío.
 
 Las rutas de fuentes se resuelven desde la carpeta de `brand.json` y deben permanecer dentro de ella. El comprobador verifica su hash y su caducidad declarada; no accede a la red. Revisa el contenido de una fuente antes de actualizar el hash con `hashlib.sha256(path.read_bytes()).hexdigest()`. La integridad no acredita que la fuente sea cierta ni que respalde una afirmación concreta.
+
+## Idioma
+
+`--language es` o `--language en` selecciona la identidad de referencia y sus comprobaciones; no traduce contenido ni detecta idiomas. Sin el flag se mantiene el paquete español. Con `--pack`, el idioma declarado por ese paquete gobierna el resultado; un flag explícito contradictorio se rechaza. Los nombres canónicos ingleses son Core, Mind, Body, Skin, Engines, Brand OS e Interconnections, en ese orden. No mezclar nombres de ambos idiomas en un paquete.
+
+Los IDs de reglas, las claves JSON, los estados y los códigos de salida se conservan entre idiomas. Los mensajes, fuentes y nombres de capas se localizan. La pieza admite `language` opcional: si se declara, debe coincidir con el paquete. Sin ese campo, el llamante elige el idioma correcto; el comprobador no lo adivina. Para contenido mixto, revisar cada idioma con su paquete.
+
+`serve --language en` inicia la misma API local con el paquete inglés para todas las peticiones; no hay negociación HTTP de idiomas. Reiniciar el servidor para cambiar de idioma. Los errores de validación se localizan; errores nativos del sistema operativo y mensajes estándar de argparse mantienen el idioma del entorno.
 
 ## Comprobaciones admitidas
 

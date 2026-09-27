@@ -184,6 +184,104 @@ class GuardianTests(unittest.TestCase):
             server.server_close()
             thread.join(timeout=3)
 
+    def test_bilingual_examples_preserve_review_boundaries(self):
+        for language, directory, layers in [('es', 'brand-machines', bm.LAYERS),
+                                            ('en', 'brand-machines-en', bm.LAYERS_EN)]:
+            pack = bm.load_pack(SKILL / 'assets' / directory / 'brand.json')
+            prefix = 'en/' if language == 'en' else ''
+            with self.subTest(language=language):
+                for example, status in [('chapter-17', 'revise'), ('variation', 'needs_review'),
+                                        ('semantic-contradiction', 'needs_review'),
+                                        ('unsupported-claim', 'needs_evidence')]:
+                    out = bm.review(pack, self.example(prefix + example), TODAY)
+                    self.assertEqual((out['status'], out['language']), (status, language))
+                    self.assertEqual(out['semantic_review'], 'pending')
+                    self.assertFalse(out['publication_authorized'])
+                chapter = bm.review(pack, self.example(prefix + 'chapter-17'), TODAY)
+                self.assertEqual({f['check'] for f in chapter['findings']},
+                                 {'no_superlativos', 'exclamaciones_excesivas'})
+                self.assertEqual({f['layer'] for f in chapter['findings']}, {layers[3]})
+                artifact = self.example(prefix + 'variation')
+                artifact['layers'] = layers
+                self.assertEqual(bm.review(pack, artifact, TODAY)['status'], 'needs_review')
+                artifact['layers'] = bm.LAYERS_EN if language == 'es' else bm.LAYERS
+                self.assertEqual(bm.review(pack, artifact, TODAY)['status'], 'revise')
+        en = bm.load_pack(bm.ENGLISH_PACK)
+        artifact = self.example('en/variation')
+        artifact['content'] = 'The bestiary contains many creatures.'
+        self.assertFalse(bm.review(en, artifact, TODAY)['findings'])
+
+    def test_language_boundaries_and_legacy_spanish_packs(self):
+        legacy = copy.deepcopy(self.pack)
+        del legacy['language']
+        bm.validate_pack(legacy, self.base)
+        self.assertEqual(bm.review(legacy, self.example('variation'), TODAY)['language'], 'es')
+        for language in ('fr', None, []):
+            invalid = copy.deepcopy(self.pack)
+            invalid['language'] = language
+            with self.subTest(language=language), self.assertRaises(bm.Invalid):
+                bm.validate_pack(invalid, self.base)
+        with self.assertRaises(bm.Invalid):
+            bm.review(self.pack, self.example('en/chapter-17'), TODAY)
+        en = bm.load_pack(bm.ENGLISH_PACK)
+        en['layers'][0]['name'] = 'Núcleo'
+        with self.assertRaises(bm.Invalid):
+            bm.validate_pack(en, bm.ENGLISH_PACK.parent)
+
+    def test_english_cli_from_copied_skill_and_explicit_pack(self):
+        installed = Path(self.tmp.name) / 'installed'
+        shutil.copytree(SKILL, installed)
+        script = installed / 'scripts/bm.py'
+        result = subprocess.run([sys.executable, str(script), 'review', '--language', 'en',
+                                 '--input', str(installed / 'assets/examples/en/chapter-17.json')],
+                                cwd=self.tmp.name, text=True, capture_output=True)
+        self.assertEqual(result.returncode, 1, result.stderr)
+        self.assertEqual(json.loads(result.stdout)['findings'][0]['layer'], 'Skin')
+        result = subprocess.run([sys.executable, str(script), 'diagnose', '--pack',
+                                 str(installed / 'assets/brand-machines-en/brand.json')],
+                                cwd=self.tmp.name, text=True, capture_output=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout)['layers'][0]['name'], 'Core')
+        result = subprocess.run([sys.executable, str(script), 'validate', '--language', 'en',
+                                 '--pack', str(self.path)], text=True, capture_output=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(json.loads(result.stderr)['error'], '--language does not match the pack.')
+        (installed / 'assets/brand-machines-en/sources/editorial.md').write_text('changed')
+        result = subprocess.run([sys.executable, str(script), 'validate', '--pack',
+                                 str(installed / 'assets/brand-machines-en/brand.json')],
+                                text=True, capture_output=True)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn('Source changed:', json.loads(result.stderr)['error'])
+
+    def test_api_languages_are_isolated_and_errors_localized(self):
+        servers = [(bm.make_server(self.path, 0), 'es'), (bm.make_server(bm.ENGLISH_PACK, 0), 'en')]
+        threads = [threading.Thread(target=s.serve_forever, daemon=True) for s, _ in servers]
+        for thread in threads:
+            thread.start()
+        try:
+            for server, language in servers:
+                with self.subTest(language=language):
+                    url = f'http://127.0.0.1:{server.server_port}/api/v1/validate'
+                    artifact = self.example(('en/' if language == 'en' else '') + 'chapter-17')
+                    request = Request(url, data=json.dumps(artifact).encode(),
+                                      headers={'Content-Type': 'application/json'})
+                    with urlopen(request, timeout=3) as response:
+                        out = json.load(response)
+                    self.assertEqual((out['status'], out['language']), ('revise', language))
+                    bad = Request(url, data=b'{', headers={'Content-Type': 'application/json'})
+                    with self.assertRaises(HTTPError) as error:
+                        urlopen(bad, timeout=3)
+                    self.assertEqual(error.exception.code, 400)
+                    self.assertEqual(json.load(error.exception)['error'],
+                                     'Invalid JSON.' if language == 'en' else 'JSON inválido.')
+                    error.exception.close()
+        finally:
+            for server, _ in servers:
+                server.shutdown()
+                server.server_close()
+            for thread in threads:
+                thread.join(timeout=3)
+
 
 if __name__ == '__main__':
     unittest.main()

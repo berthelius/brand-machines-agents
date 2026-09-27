@@ -2,7 +2,7 @@
   "schema_version": "0.1",
   "id": "brand-machines",
   "name": "Brand Machines",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "sources": [
     {
       "id": "method",
@@ -183,5 +183,6 @@
       "message": "La arquitectura declarada no coincide con las siete capas canónicas.",
       "suggestion": "Conservar Núcleo, Mente, Cuerpo, Piel, Motores, Brand OS e Interconexiones."
     }
-  ]
+  ],
+  "language": "es"
 }
