@@ -1,168 +1,172 @@
+<p align="center"><strong>English</strong> · <a href="README.es.md" lang="es">Español</a></p>
+
 <h1 align="center">Brand Machines</h1>
 
-<p align="center"><strong>El método para agentes.</strong></p>
+<p align="center"><strong>The method for agents.</strong></p>
 
 <p align="center">
-  Diagnostica, diseña y revisa sistemas de marca.<br>
-  Siete capas, principios de decisión y fuentes verificables.<br>
-  <sub>Un método de Viktor Berthelius.</sub>
+  Diagnose, design and review brand systems.<br>
+  Seven layers, decision principles and verifiable sources.<br>
+  <sub>A method by Viktor Berthelius.</sub>
 </p>
 
 <p align="center">
-  <a href="https://github.com/berthelius/brand-machines-agents/releases/tag/v0.1.0"><img src="https://img.shields.io/badge/v0.1.0-e63946?style=flat-square" alt="Versión 0.1.0"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-1a1a1a?style=flat-square" alt="Licencia MIT"></a>
-  <a href="#el-guardián-en-acción"><img src="https://img.shields.io/badge/Python-3.10%2B-1a1a1a?style=flat-square" alt="Comprobador local: Python 3.10 o posterior"></a>
+  <a href="https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/v0.2.0-e63946?style=flat-square" alt="Version 0.2.0"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1a1a1a?style=flat-square" alt="MIT license"></a>
+  <a href="#the-guardian-in-action"><img src="https://img.shields.io/badge/Python-3.10%2B-1a1a1a?style=flat-square" alt="Local checker: Python 3.10 or later"></a>
 </p>
 
 <p align="center">
-  <a href="#instalar"><strong>Instalar</strong></a> ·
-  <a href="#tres-formas-de-trabajar">Usar</a> ·
-  <a href="#documentación">Documentación</a> ·
-  <a href="https://machines.brthls.com">El libro y el sistema</a>
+  <a href="#install"><strong>Install</strong></a> ·
+  <a href="#three-ways-to-work">Use</a> ·
+  <a href="#documentation">Documentation</a> ·
+  <a href="https://machines.brthls.com/en/">The book and the system</a>
 </p>
 
 ---
 
 <p align="center">
-  <strong>Núcleo · Mente · Cuerpo · Piel</strong><br>
-  <strong>Motores · Brand OS · Interconexiones</strong>
+  <strong>Core · Mind · Body · Skin</strong><br>
+  <strong>Engines · Brand OS · Interconnections</strong>
 </p>
 
-> El método es compartido. La identidad de cada marca es propia.
+> The method is shared. Each brand has its own identity.
 
-Esta skill adapta *Brand Machines: Teoría general de los sistemas de marca* al trabajo de un agente. El paquete de referencia incluido describe Brand Machines; sus fuentes, estilo y decisiones no se imponen a otras marcas.
+This skill adapts *Brand Machines: A General Theory of Brand Systems* to an agent's work. The included reference identity describes Brand Machines; its sources, style and decisions are not imposed on other brands. English terminology follows the published book's canon and glossary.
 
-## Instalar
+## Install
 
-Desde el proyecto donde quieras usar la skill:
+Run from the project where you want to use the skill:
 
 ```sh
 npx skills add berthelius/brand-machines-agents --skill brand-machines
 ```
 
-**Primera versión en español.** Instalación verificada en **Codex** y **Claude Code**. El instalador permite elegir los agentes y el alcance.
+**Available in English and Spanish.** Installation verified in **Codex** and **Claude Code**. The installer lets you choose agents and installation scope.
 
-| Agente | Invocación |
+| Agent | Invocation |
 | :--- | :--- |
 | Codex | `$brand-machines` |
 | Claude Code | `/brand-machines` |
 
 <details>
-<summary>Instalación manual y otros agentes</summary>
+<summary>Manual installation and other agents</summary>
 
-Descarga el repositorio o la [release](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.1.0) y copia la carpeta completa `skills/brand-machines` —o `brand-machines` dentro del ZIP— al directorio de skills de tu agente. Conserva `references`, `scripts`, `assets` y `agents` junto a `SKILL.md`.
+Download the repository or [release](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0). Copy the complete `skills/brand-machines` folder—or `brand-machines` from the ZIP—to your agent's skills directory. Keep `references`, `scripts`, `assets` and `agents` alongside `SKILL.md`.
 
-La documentación funciona con cualquier agente capaz de leer esos archivos; la detección automática depende del entorno. Python 3.10 o posterior es necesario solo para ejecutar el comprobador local, que no tiene dependencias externas.
-
-</details>
-
-## Tres formas de trabajar
-
-### 01 · Diagnosticar
-
-> Usa Brand Machines para diagnosticar esta marca con los documentos adjuntos. Distingue evidencia, inferencias e información pendiente por capa.
-
-### 02 · Proponer
-
-> Aplica Brand Machines a este brief. Deriva la propuesta de nuestros principios, explica el trade-off y señala las decisiones aún no aprobadas.
-
-### 03 · Revisar
-
-> Actúa como Guardián de esta propuesta. Contrasta las afirmaciones con sus fuentes y la decisión con el Núcleo. Permite variaciones coherentes y sugiere una corrección cuando proceda.
-
-## El Guardián, en acción
-
-Una demostración del capítulo 17, después de clonar el repositorio y desde su raíz:
-
-```sh
-python3 skills/brand-machines/scripts/bm.py review \
-  --input skills/brand-machines/assets/examples/chapter-17.json
-```
-
-**Pieza:** «La MEJOR oferta del año!!!!»
-
-**Resultado:** `revise`, con `no_superlativos` y `exclamaciones_excesivas`, sus fuentes y sugerencias de revisión. El código de salida 1 es el esperado en este ejemplo.
-
-**El comprobador aplica reglas explícitas. El agente realiza la revisión semántica.** Una pieza sin incidencias mecánicas devuelve `needs_review`: todavía requiere juicio sobre su coherencia.
-
-<details>
-<summary>Validar el paquete, diagnosticar y probar una variación</summary>
-
-```sh
-python3 skills/brand-machines/scripts/bm.py validate
-python3 skills/brand-machines/scripts/bm.py diagnose
-python3 skills/brand-machines/scripts/bm.py review \
-  --input skills/brand-machines/assets/examples/variation.json
-```
-
-La variación devuelve `needs_review`. El ejemplo `semantic-contradiction.json` muestra por qué: una decisión puede superar las comprobaciones léxicas y contradecir la definición de Brand Machine.
-
-Los comandos `review`, `diagnose`, `validate` y `serve` aceptan `--pack ruta/brand.json` para usar otra identidad.
+The documentation works with any agent able to read these files; automatic discovery depends on the environment. Python 3.10 or later is needed only for the optional local checker, which has no external dependencies.
 
 </details>
 
-<details>
-<summary>API local · sin claves ni llamadas a modelos</summary>
+The agent responds in your language. For the local checker, use `--language en` or `--language es`: it selects that language's identity and rules. Existing commands without a flag still use the Spanish pack. With `--pack`, the pack's language governs.
+
+## Three ways to work
+
+### 01 · Diagnose
+
+> Use Brand Machines to diagnose this brand from the attached documents. Distinguish evidence, inferences and missing information for each layer.
+
+### 02 · Propose
+
+> Apply Brand Machines to this brief. Derive the proposal from our principles, explain the trade-off and identify decisions that still need approval.
+
+### 03 · Review
+
+> Act as Guardian for this proposal. Check its claims against their sources and its decisions against the Core. Allow coherent variation and suggest a correction where needed.
+
+## The Guardian, in action
+
+A demonstration from Chapter 17. After cloning the repository, run from its root:
 
 ```sh
-python3 skills/brand-machines/scripts/bm.py serve
+python3 skills/brand-machines/scripts/bm.py review --language en \
+  --input skills/brand-machines/assets/examples/en/chapter-17.json
 ```
 
-En otra terminal:
+**Piece:** “The BEST offer of the year!!!!”
+
+**Result:** `revise`, with `no_superlativos` and `exclamaciones_excesivas`, their sources and suggested revisions. Exit code 1 is expected for this example. Rule IDs remain the same in both languages, as in the book.
+
+**The checker applies explicit rules. The agent performs semantic review.** A piece with no mechanical issues returns `needs_review`: its coherence still requires judgment.
+
+<details>
+<summary>Validate a pack, diagnose and try a variation</summary>
+
+```sh
+python3 skills/brand-machines/scripts/bm.py validate --language en
+python3 skills/brand-machines/scripts/bm.py diagnose --language en
+python3 skills/brand-machines/scripts/bm.py review --language en \
+  --input skills/brand-machines/assets/examples/en/variation.json
+```
+
+The variation returns `needs_review`. `assets/examples/en/semantic-contradiction.json` shows why: a decision can pass lexical checks while contradicting the definition of Brand Machine.
+
+`review`, `diagnose`, `validate` and `serve` accept `--pack path/to/brand.json` to use another identity. Select the right language explicitly; the checker does not detect or translate input. For mixed-language material, review each language with its corresponding pack.
+
+</details>
+
+<details>
+<summary>Local API · no keys or model calls</summary>
+
+```sh
+python3 skills/brand-machines/scripts/bm.py serve --language en
+```
+
+In another terminal:
 
 ```sh
 curl http://127.0.0.1:8765/api/v1/validate \
   -H 'Content-Type: application/json' \
-  --data '{"type":"copy","content":"La MEJOR oferta del año!!!!","context":"email_subject"}'
+  --data '{"type":"copy","language":"en","content":"The BEST offer of the year!!!!","context":"email_subject"}'
 ```
 
-La API expone el mismo comprobador y escucha solo en tu máquina. No necesita claves, no realiza llamadas a modelos y no publica piezas. No es un servicio público alojado.
+The API runs the same checker and listens only on your machine, using the pack selected at startup for all requests. It needs no keys, makes no model calls and publishes nothing. It is not a hosted public service.
 
 </details>
 
 <details>
-<summary>Qué acredita cada comprobación</summary>
+<summary>What each check establishes</summary>
 
-| Parte | Acredita | No acredita |
+| Part | Establishes | Does not establish |
 | :--- | :--- | :--- |
-| `validate` | Estructura del paquete e integridad de fuentes | Veracidad de las fuentes |
-| `diagnose` | Cobertura documental por capa | Madurez de la marca |
-| `review` / API | Comprobaciones declaradas y presencia/vigencia de referencias | Coherencia semántica total ni verdad de afirmaciones |
-| Skill aplicada por un agente | Una revisión razonada dentro del alcance y fuentes disponibles | Autorización automática para publicar |
+| `validate` | Pack structure and source integrity | Truth of the sources |
+| `diagnose` | Documentation coverage by layer | Brand maturity |
+| `review` / API | Declared checks and presence/expiry of references | Complete semantic coherence or truth of claims |
+| Skill applied by an agent | A reasoned review within available scope and sources | Automatic permission to publish |
 
 </details>
 
-## Documentación
+## Documentation
 
-| Referencia | Contenido |
+| Reference | Content |
 | :--- | :--- |
-| [Método](skills/brand-machines/references/method.md) | Las siete capas y sus relaciones. |
-| [Procedimientos](skills/brand-machines/references/workflows.md) | Diagnóstico, propuesta y revisión. |
-| [Contrato del Guardián](skills/brand-machines/references/review.md) | Criterios, hallazgos y alcance de la revisión. |
-| [Formato del paquete](skills/brand-machines/references/pack.md) | Cómo representar otra identidad y sus fuentes. |
-| [Procedencia editorial](skills/brand-machines/references/provenance.json) | Fuentes de esta adaptación. |
+| [Method](skills/brand-machines/references/en/method.md) | The seven layers and their relationships. |
+| [Workflows](skills/brand-machines/references/en/workflows.md) | Diagnosis, proposal and review. |
+| [Guardian contract](skills/brand-machines/references/en/review.md) | Criteria, findings and scope of review. |
+| [Pack format](skills/brand-machines/references/en/pack.md) | Representing another identity and its sources. |
+| [Editorial provenance](skills/brand-machines/references/provenance.json) | Sources of this adaptation and English terminology. |
 
 <details>
-<summary>Desarrollo y pruebas</summary>
+<summary>Development and tests</summary>
 
 ```sh
 python3 -m unittest discover -s tests -v
 ```
 
-Las pruebas automatizadas cubren el código local. Los escenarios del [contrato del Guardián](skills/brand-machines/references/review.md) sirven para evaluar por separado el comportamiento del agente. Una suite mecánica verde no acredita una evaluación semántica. [Ver CI](https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml).
+Automated tests cover the local code in both languages, language boundaries and legacy Spanish packs. Scenarios in the [Guardian contract](skills/brand-machines/references/en/review.md) separately evaluate agent behavior. A passing mechanical suite does not establish semantic correctness. [View CI](https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml).
 
 </details>
 
-La v0.1.0 contiene una skill autosuficiente, una identidad de referencia, cuatro piezas de demostración y pruebas del comprobador. OpenDesign, exportaciones SOUL.md y un servidor MCP quedan para integraciones posteriores.
+Version 0.2.0 contains one self-contained bilingual skill, a reference identity and four demonstration pieces in each language, and a shared checker. OpenDesign, SOUL.md exports and an MCP server remain possible future integrations.
 
 ---
 
 <p align="center">
   <strong>Brand Machines</strong><br>
-  <sub>Teoría general de los sistemas de marca · Viktor Berthelius</sub><br><br>
-  <a href="https://www.brthls.com/book">El libro</a> ·
-  <a href="https://machines.brthls.com">machines.brthls.com</a> ·
-  <a href="https://www.brthls.com">brthls.com</a>
+  <sub>A General Theory of Brand Systems · Viktor Berthelius</sub><br><br>
+  <a href="https://www.brthls.com/en/book">The book</a> ·
+  <a href="https://machines.brthls.com/en/">machines.brthls.com</a> ·
+  <a href="https://www.brthls.com/en/">brthls.com</a>
 </p>
 
-<p align="center"><sub>MIT para los archivos de esta distribución. El manuscrito completo y su repositorio editorial privado quedan fuera de ella. No se conceden derechos sobre marcas de terceros.</sub></p>
+<p align="center"><sub>MIT for this distribution's files. The complete manuscript and its private editorial repository are not included. No rights to third-party brands are granted.</sub></p>

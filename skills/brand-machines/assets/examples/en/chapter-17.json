@@ -1,0 +1,6 @@
+{
+  "type": "copy",
+  "context": "email_subject",
+  "content": "The BEST offer of the year!!!!",
+  "language": "en"
+}
