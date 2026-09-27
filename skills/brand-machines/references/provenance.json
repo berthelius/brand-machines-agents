@@ -1,0 +1,51 @@
+{
+  "author": "Viktor Berthelius",
+  "method": "Brand Machines",
+  "language": "es",
+  "agent_edition": "0.1.0",
+  "source_snapshot": "2026-09-27",
+  "source_commit": "82000712d3d8dc662010e1645f0ad8c77a256768",
+  "note": "Fuentes del manuscrito privado. Esta distribución contiene una adaptación operativa y extractos limitados, no el libro completo. Los hashes identifican la fuente editorial; no dan acceso al manuscrito.",
+  "sources": [
+    {
+      "path": "editorial/canon.qmd",
+      "sha256": "b90be612949dfdecfdf128f829a06f18385c622d34c35b680a5edb28e193aba3"
+    },
+    {
+      "path": "editorial/glossary.qmd",
+      "sha256": "bb758090e645b1401d319ad67c3feed1381aa2bf3814717e9af4deac8edc8b32"
+    },
+    {
+      "path": "editorial/style-guide.qmd",
+      "sha256": "846b70707631038e9002bd25ae87c7779ae048241e14301dc30190b287fec31a"
+    },
+    {
+      "path": "editorial/semantic-map.qmd",
+      "sha256": "09515d9c080c6cd1e0f850f982bb7882d77d372ad75bf418ad66ece8ae26ad04"
+    },
+    {
+      "path": "DESIGN.md",
+      "sha256": "cbbe7069d839824ca8823c0cd985058033bf791294e9a2f53331ad4b85fdc6a7"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "0b4c532ece7a80bdad6b47d008d86cbecc354b0ed9943c675c69bec4c28c4052"
+    },
+    {
+      "path": "book/chapters/part-03/11-nucleo.qmd",
+      "sha256": "bcebcefeede16b6df95e241980dd6801d4c56fa82fb7d39ea1bbf867a101a71a"
+    },
+    {
+      "path": "book/chapters/part-03/12-mente.qmd",
+      "sha256": "fd302334cdf291c793cb3315b7f3d34eaee60f2e148b60603dbe3fec84edad7e"
+    },
+    {
+      "path": "book/chapters/part-03/17-interconexion.qmd",
+      "sha256": "e27266e30d6abb052d6419a1dc3fdc4505bfaf88bb92d300f5abb3f34a2feff8"
+    },
+    {
+      "path": "book/chapters/part-05/23-marcas-autonomas.qmd",
+      "sha256": "10ec1c09d0c850fb3ee7eccc9547bdc22f9c878593f92754d5fd737e6001846e"
+    }
+  ]
+}

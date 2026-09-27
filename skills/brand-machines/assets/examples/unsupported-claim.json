@@ -1,0 +1,11 @@
+{
+  "type": "copy",
+  "context": "marketing_copy",
+  "content": "Brand Machines ha multiplicado las ventas por diez.",
+  "claims": [
+    {
+      "text": "ha multiplicado las ventas por diez",
+      "sources": []
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Brand Machines"
+  short_description: "Diagnostica, diseña y revisa sistemas de marca"
+  default_prompt: "Usa $brand-machines para revisar esta propuesta con las siete capas y sus fuentes."

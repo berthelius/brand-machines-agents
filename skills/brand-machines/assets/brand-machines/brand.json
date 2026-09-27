@@ -1,0 +1,187 @@
+{
+  "schema_version": "0.1",
+  "id": "brand-machines",
+  "name": "Brand Machines",
+  "version": "0.1.0",
+  "sources": [
+    {
+      "id": "method",
+      "title": "Marco de Brand Machines",
+      "path": "sources/method.md",
+      "sha256": "31f7c47a33363706d1ee30944d629a4195932e141f56f7138258b6fd89783827"
+    },
+    {
+      "id": "editorial",
+      "title": "Identidad editorial de Brand Machines",
+      "path": "sources/editorial.md",
+      "sha256": "62d47432919c1ffbb201e43b0135aefb5ceef12b568f1ae342227bac8d1e292e"
+    },
+    {
+      "id": "chapter17",
+      "title": "Ejemplo de validación del capítulo 17",
+      "path": "sources/chapter17.md",
+      "sha256": "351f84b86701f8b450da557623ba4a824f1c42ee571ef7f5fa005bcd253f2ad6"
+    }
+  ],
+  "layers": [
+    {
+      "id": 1,
+      "name": "Núcleo",
+      "summary": "La definición y los principios del método son la base de la identidad editorial.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mente",
+      "summary": "Las decisiones se contrastan con canon, vocabulario, fuentes y dependencias conceptuales.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Cuerpo",
+      "summary": "El sistema editorial dispone de design system, componentes y herramientas de producción versionados.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Piel",
+      "summary": "La expresión es editorial, precisa y contenida; su forma se adapta al soporte.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Motores",
+      "summary": "La producción editorial mantiene generación, revisión y actualización con funciones identificadas.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Brand OS",
+      "summary": "Las decisiones, permisos y versiones coordinan la producción sin alterar silenciosamente el canon.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Interconexiones",
+      "summary": "La edición para agentes permite consultar y aplicar el método desde herramientas externas.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "canon",
+      "layer": 1,
+      "name": "Fidelidad conceptual",
+      "definition": "Conservar las definiciones y las relaciones del método al cambiar de formato.",
+      "situations": [
+        "Explicación del método",
+        "Adaptación a agentes",
+        "Revisión de una propuesta"
+      ],
+      "tradeoff": "Se sacrifica simplificación cuando destruye una distinción del canon.",
+      "example": "Presentar las siete capas manteniendo sus nombres y funciones.",
+      "counterexample": "Sustituir Interconexiones por otra capa y afirmar que es el marco del libro.",
+      "sources": [
+        "method",
+        "editorial"
+      ]
+    },
+    {
+      "id": "evidence",
+      "layer": 2,
+      "name": "Afirmaciones sustentadas",
+      "definition": "Distinguir datos verificables, inferencias y decisiones pendientes.",
+      "situations": [
+        "Afirmaciones de rendimiento",
+        "Casos de marca",
+        "Promesas comerciales"
+      ],
+      "tradeoff": "Se sacrifica una afirmación más rotunda cuando no tiene sustento.",
+      "example": "Pedir la fuente de un resultado antes de afirmarlo como hecho.",
+      "counterexample": "Inventar una cifra de ventas para hacer más persuasiva una presentación.",
+      "sources": [
+        "editorial"
+      ]
+    },
+    {
+      "id": "voice",
+      "layer": 4,
+      "name": "Precisión editorial",
+      "definition": "Expresar una idea concreta con la voz editorial de Brand Machines.",
+      "situations": [
+        "email_subject",
+        "marketing_copy",
+        "Presentación editorial"
+      ],
+      "tradeoff": "Se sacrifica énfasis promocional cuando reemplaza precisión.",
+      "example": "Describir qué hace una herramienta y los límites de lo que comprueba.",
+      "counterexample": "Prometer superioridad absoluta sin comparación verificable.",
+      "sources": [
+        "editorial",
+        "chapter17"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "no_superlativos",
+      "kind": "forbidden_terms",
+      "principle": "voice",
+      "contexts": [
+        "email_subject",
+        "marketing_copy"
+      ],
+      "message": "Se ha encontrado una expresión promocional que requiere revisión.",
+      "suggestion": "Sustituir la superioridad no sustentada por una descripción concreta y verificable.",
+      "terms": [
+        "la mejor",
+        "el mejor",
+        "líder del mercado",
+        "best-in-class"
+      ]
+    },
+    {
+      "id": "exclamaciones_excesivas",
+      "kind": "max_exclamations",
+      "principle": "voice",
+      "contexts": [
+        "email_subject",
+        "marketing_copy"
+      ],
+      "message": "El énfasis supera el umbral de esta demostración editorial.",
+      "suggestion": "Reducir el énfasis y revisar la precisión del mensaje.",
+      "maximum": 2
+    },
+    {
+      "id": "siete_capas",
+      "kind": "canonical_layers",
+      "principle": "canon",
+      "contexts": [
+        "*"
+      ],
+      "message": "La arquitectura declarada no coincide con las siete capas canónicas.",
+      "suggestion": "Conservar Núcleo, Mente, Cuerpo, Piel, Motores, Brand OS e Interconexiones."
+    }
+  ]
+}

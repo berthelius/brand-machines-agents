@@ -1,0 +1,5 @@
+{
+  "type": "copy",
+  "context": "email_subject",
+  "content": "La MEJOR oferta del año!!!!"
+}
