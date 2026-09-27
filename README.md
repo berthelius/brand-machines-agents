@@ -2,7 +2,7 @@
 
 El método de **Viktor Berthelius** para diagnosticar, diseñar y revisar sistemas de marca, en una skill instalable. Siete capas, principios de decisión y fuentes verificables.
 
-[El libro](https://www.brthls.com/book) · [Método](skills/brand-machines/references/method.md) · [Contrato del Guardián](skills/brand-machines/references/review.md) · [Formato del paquete](skills/brand-machines/references/pack.md)
+[El libro](https://www.brthls.com/book) · [Brand Machines](https://machines.brthls.com) · [Método](skills/brand-machines/references/method.md) · [Contrato del Guardián](skills/brand-machines/references/review.md) · [Formato del paquete](skills/brand-machines/references/pack.md)
 
 **v0.1.0 · Español · MIT · Python sin dependencias para las comprobaciones locales.**
 
