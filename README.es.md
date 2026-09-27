@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/v0.2.0-e63946?style=flat-square" alt="Versión 0.1.0"></a>
+  <a href="https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/v0.2.0-e63946?style=flat-square" alt="Versión 0.2.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-1a1a1a?style=flat-square" alt="Licencia MIT"></a>
   <a href="#el-guardián-en-acción"><img src="https://img.shields.io/badge/Python-3.10%2B-1a1a1a?style=flat-square" alt="Comprobador local: Python 3.10 o posterior"></a>
 </p>
