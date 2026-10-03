@@ -168,7 +168,7 @@ La API expone el mismo comprobador y escucha solo en tu máquina. No necesita cl
 <summary>Qué acredita cada comprobación</summary>
 
 | Parte | Acredita | No acredita |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | `validate` | Estructura del paquete e integridad de fuentes | Veracidad de las fuentes |
 | `diagnose` | Cobertura documental por capa | Madurez de la marca |
 | `review` / API | Comprobaciones declaradas y presencia/vigencia de referencias | Coherencia semántica total ni verdad de afirmaciones |

@@ -168,7 +168,7 @@ The API runs the same checker and listens only on your machine, using the pack s
 <summary>What each check establishes</summary>
 
 | Part | Establishes | Does not establish |
-| :--- | :--- |
+| :--- | :--- | :--- |
 | `validate` | Pack structure and source integrity | Truth of the sources |
 | `diagnose` | Documentation coverage by layer | Brand maturity |
 | `review` / API | Declared checks and presence/expiry of references | Complete semantic coherence or truth of claims |
