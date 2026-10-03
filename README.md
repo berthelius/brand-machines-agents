@@ -18,6 +18,7 @@
 
 <p align="center">
   <a href="#install"><strong>Install</strong></a> ·
+  <a href="skills/brand-machines/assets/case-studies/patagonia/README.md">Patagonia case</a> ·
   <a href="#three-ways-to-work">Use</a> ·
   <a href="#documentation">Documentation</a> ·
   <a href="https://machines.brthls.com/en/">The book and the system</a>
@@ -33,6 +34,20 @@
 > The method is shared. Each brand has its own identity.
 
 This skill adapts *Brand Machines: A General Theory of Brand Systems* to an agent's work. The included reference identity describes Brand Machines; its sources, style and decisions are not imposed on other brands. English terminology follows the published book's canon and glossary.
+
+## Start with a real brand, hypothetical decisions
+
+**[Patagonia: when should a brand recommend buying less?](skills/brand-machines/assets/case-studies/patagonia/README.md)** Four primary sources, five hypothetical messages and a reproducible local check, with a separate annotated semantic review.
+
+“Replace the one that still works” and “consider replacement when required use cannot be restored” lead to different judgments under the same principle. An authentic guarantee also fails to support a promise of free repairs within 48 hours. The case shows the evidence behind each decision and leaves four undocumented layers empty.
+
+An independent educational study, not endorsed by Patagonia. Run the example without an account, API key or book purchase:
+
+```sh
+python3 skills/brand-machines/assets/case-studies/patagonia/run.py
+```
+
+Run from a clone of this repository. This reproduces mechanical checks; the [annotated review](skills/brand-machines/assets/case-studies/patagonia/semantic-review.md) explains the semantic judgments and their limits.
 
 ## Install
 
@@ -145,26 +160,29 @@ The API runs the same checker and listens only on your machine, using the pack s
 | [Guardian contract](skills/brand-machines/references/en/review.md) | Criteria, findings and scope of review. |
 | [Pack format](skills/brand-machines/references/en/pack.md) | Representing another identity and its sources. |
 | [Editorial provenance](skills/brand-machines/references/provenance.json) | Sources of this adaptation and English terminology. |
+| [Patagonia worked case](skills/brand-machines/assets/case-studies/patagonia/README.md) | Public sources, five scenarios, observed checks and scoped semantic judgments. |
+| [Contributing](CONTRIBUTING.md) | Evidence, brand separation and validation requirements. |
 
 <details>
 <summary>Development and tests</summary>
 
 ```sh
 python3 -m unittest discover -s tests -v
+python3 skills/brand-machines/assets/case-studies/patagonia/run.py
 ```
 
 Automated tests cover the local code in both languages, language boundaries and legacy Spanish packs. Scenarios in the [Guardian contract](skills/brand-machines/references/en/review.md) separately evaluate agent behavior. A passing mechanical suite does not establish semantic correctness. [View CI](https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml).
 
 </details>
 
-Version 0.2.0 contains one self-contained bilingual skill, a reference identity and four demonstration pieces in each language, and a shared checker. OpenDesign, SOUL.md exports and an MCP server remain possible future integrations.
+The latest tagged release is v0.2.0. This source tree also includes the Patagonia study and stricter source-expiry validation; those additions are not in the v0.2.0 release archive. The skill remains self-contained and the local checker has no external dependencies.
 
 ---
 
 <p align="center">
   <strong>Brand Machines</strong><br>
   <sub>A General Theory of Brand Systems · Viktor Berthelius</sub><br><br>
-  <a href="https://www.brthls.com/en/book">The book</a> ·
+  <a href="https://machines.brthls.com/en/#book">The book</a> ·
   <a href="https://machines.brthls.com/en/">machines.brthls.com</a> ·
   <a href="https://www.brthls.com/en/">brthls.com</a>
 </p>

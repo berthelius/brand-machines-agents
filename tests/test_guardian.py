@@ -66,6 +66,17 @@ class GuardianTests(unittest.TestCase):
                 self.pack['sources'][1]['valid_until'] = '2026-09-26'
                 self.assertEqual(bm.review(self.pack, artifact, TODAY)['status'], 'needs_evidence')
 
+    def test_source_expiry_requires_calendar_date_and_includes_last_day(self):
+        source = self.pack['sources'][0]
+        for value in ('20260101', '2026-W01-1', '2026-02-30'):
+            source['valid_until'] = value
+            with self.subTest(value=value), self.assertRaises(bm.Invalid):
+                bm.validate_pack(self.pack, self.base)
+        source['valid_until'] = '2026-09-27'
+        bm.validate_pack(self.pack, self.base)
+        self.assertIn(source['id'], bm.current_sources(self.pack, TODAY))
+        self.assertNotIn(source['id'], bm.current_sources(self.pack, date(2026, 9, 28)))
+
     def test_source_presence_is_not_semantic_approval(self):
         artifact = self.example('unsupported-claim')
         artifact['claims'][0]['sources'] = ['editorial']

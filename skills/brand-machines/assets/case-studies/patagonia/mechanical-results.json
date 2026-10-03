@@ -1,0 +1,168 @@
+{
+  "as_of": "2026-10-04",
+  "missing_layers": [
+    "Mind",
+    "Body",
+    "Engines",
+    "Brand OS"
+  ],
+  "results": {
+    "repair-first": {
+      "brand": "patagonia-public-study",
+      "version": "2026-10-04",
+      "as_of": "2026-10-04",
+      "artifact_sha256": "d88c2e42ff11a204b9266bfd332b52c3d720639006f50ae7a9d02ee8aac21d39",
+      "status": "needs_evidence",
+      "scope": "deterministic",
+      "language": "en",
+      "checks_passed": true,
+      "checks_run": [
+        "absolute-impact-warning"
+      ],
+      "findings": [],
+      "missing_evidence": [
+        {
+          "layers": [
+            "Mind",
+            "Body",
+            "Engines",
+            "Brand OS"
+          ],
+          "reason": "Incomplete identity documentation."
+        }
+      ],
+      "semantic_review": "pending",
+      "publication_authorized": false,
+      "note": "Declared sources do not prove claims. Review their content, undeclared claims and alignment between layers."
+    },
+    "replacement-default": {
+      "brand": "patagonia-public-study",
+      "version": "2026-10-04",
+      "as_of": "2026-10-04",
+      "artifact_sha256": "0e001234ac7cb9c2a12758709f0b0dd2e4dc1e2af90c163eb918d9f45b76b4a9",
+      "status": "needs_evidence",
+      "scope": "deterministic",
+      "language": "en",
+      "checks_passed": true,
+      "checks_run": [
+        "absolute-impact-warning"
+      ],
+      "findings": [],
+      "missing_evidence": [
+        {
+          "layers": [
+            "Mind",
+            "Body",
+            "Engines",
+            "Brand OS"
+          ],
+          "reason": "Incomplete identity documentation."
+        }
+      ],
+      "semantic_review": "pending",
+      "publication_authorized": false,
+      "note": "Declared sources do not prove claims. Review their content, undeclared claims and alignment between layers."
+    },
+    "absolute-impact": {
+      "brand": "patagonia-public-study",
+      "version": "2026-10-04",
+      "as_of": "2026-10-04",
+      "artifact_sha256": "0755004d182f49afeb89147d01dae198dca7632571e19ca778c5d38099348666",
+      "status": "revise",
+      "scope": "deterministic",
+      "language": "en",
+      "checks_passed": false,
+      "checks_run": [
+        "absolute-impact-warning"
+      ],
+      "findings": [
+        {
+          "check": "absolute-impact-warning",
+          "layer": "Skin",
+          "principle": "bounded-promises",
+          "sources": [
+            "P2",
+            "P3",
+            "P4",
+            "S1"
+          ],
+          "evidence": [
+            "zero impact"
+          ],
+          "message": "Study warning: an absolute environmental claim needs source review.",
+          "suggestion": "Remove the absolute claim or obtain evidence supporting its exact scope; do not invent a percentage."
+        }
+      ],
+      "missing_evidence": [
+        {
+          "layers": [
+            "Mind",
+            "Body",
+            "Engines",
+            "Brand OS"
+          ],
+          "reason": "Incomplete identity documentation."
+        }
+      ],
+      "semantic_review": "pending",
+      "publication_authorized": false,
+      "note": "Declared sources do not prove claims. Review their content, undeclared claims and alignment between layers."
+    },
+    "citation-mismatch": {
+      "brand": "patagonia-public-study",
+      "version": "2026-10-04",
+      "as_of": "2026-10-04",
+      "artifact_sha256": "b2502db6aa019884e0d2c2d481e63430538d34cb8fcf8e6c3503986afa697030",
+      "status": "needs_evidence",
+      "scope": "deterministic",
+      "language": "en",
+      "checks_passed": true,
+      "checks_run": [
+        "absolute-impact-warning"
+      ],
+      "findings": [],
+      "missing_evidence": [
+        {
+          "layers": [
+            "Mind",
+            "Body",
+            "Engines",
+            "Brand OS"
+          ],
+          "reason": "Incomplete identity documentation."
+        }
+      ],
+      "semantic_review": "pending",
+      "publication_authorized": false,
+      "note": "Declared sources do not prove claims. Review their content, undeclared claims and alignment between layers."
+    },
+    "necessary-replacement": {
+      "brand": "patagonia-public-study",
+      "version": "2026-10-04",
+      "as_of": "2026-10-04",
+      "artifact_sha256": "b3324716b966c83c7cdf3e25b577fbcd75887829be7307a1e2c1d95ce1a0c742",
+      "status": "needs_evidence",
+      "scope": "deterministic",
+      "language": "en",
+      "checks_passed": true,
+      "checks_run": [
+        "absolute-impact-warning"
+      ],
+      "findings": [],
+      "missing_evidence": [
+        {
+          "layers": [
+            "Mind",
+            "Body",
+            "Engines",
+            "Brand OS"
+          ],
+          "reason": "Incomplete identity documentation."
+        }
+      ],
+      "semantic_review": "pending",
+      "publication_authorized": false,
+      "note": "Declared sources do not prove claims. Review their content, undeclared claims and alignment between layers."
+    }
+  }
+}

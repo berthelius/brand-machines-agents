@@ -1,0 +1,147 @@
+{
+  "schema_version": "0.1",
+  "id": "patagonia-public-study",
+  "name": "Patagonia · independent public-source study",
+  "version": "2026-10-04",
+  "language": "en",
+  "sources": [
+    {
+      "id": "P1",
+      "title": "Historical consumption message",
+      "path": "sources/2011-ad.md",
+      "sha256": "f090a71cfb71987979bbaecaf63ffbc7315f7eb3eb30df9ce72807fe915dd196"
+    },
+    {
+      "id": "P2",
+      "title": "Public repair pathways",
+      "path": "sources/repairs.md",
+      "sha256": "f89c7fa4d7678aeb69daf5755efe47627b9211c7780a2a2e4a0aa0f18c0b7260"
+    },
+    {
+      "id": "P3",
+      "title": "US service scope and used gear",
+      "path": "sources/faq.md",
+      "sha256": "87b8d2e1f402d5b2614c7d4f82156eddb0b65d67641f5933192c303c21d7a9b8"
+    },
+    {
+      "id": "P4",
+      "title": "Repair and replacement guarantee",
+      "path": "sources/guarantee.md",
+      "sha256": "f3338bb8b18843443a424e9cc6fdab28b50ec08f0b4263802a3aa6bb072b8356"
+    },
+    {
+      "id": "S1",
+      "title": "Analyst interpretation and limits",
+      "path": "sources/study-policy.md",
+      "sha256": "8819963e96bfa51173931a6f4482f1d94d1f07d2d7608afd8e8346993f407a42"
+    }
+  ],
+  "layers": [
+    {
+      "id": 1,
+      "name": "Core",
+      "summary": "Public statements prioritize useful gear, reduced unnecessary consumption and keeping products in use. This is a bounded observation, not proof of all organizational decisions.",
+      "sources": [
+        "P1",
+        "P2"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mind",
+      "summary": "",
+      "sources": []
+    },
+    {
+      "id": 3,
+      "name": "Body",
+      "summary": "",
+      "sources": []
+    },
+    {
+      "id": 4,
+      "name": "Skin",
+      "summary": "The historical advertisement and current service pages express reduction, repair and reuse in different contexts.",
+      "sources": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Engines",
+      "summary": "",
+      "sources": []
+    },
+    {
+      "id": 6,
+      "name": "Brand OS",
+      "summary": "",
+      "sources": []
+    },
+    {
+      "id": 7,
+      "name": "Interconnections",
+      "summary": "The repair page publicly describes a relationship with iFixit for care and repair guides.",
+      "sources": [
+        "P2"
+      ]
+    }
+  ],
+  "principles": [
+    {
+      "id": "useful-life",
+      "layer": 1,
+      "name": "Prioritize useful life — study inference",
+      "definition": "When gear remains useful or repairable, consider continued use before unnecessary replacement. A documented need and inability to restore useful performance can justify replacement.",
+      "situations": [
+        "Product-care advice",
+        "A seasonal purchase decision"
+      ],
+      "tradeoff": "Accept fewer immediate replacement purchases when current gear can still meet the need.",
+      "example": "In the hypothetical exercise, consider repair for a fixable defect.",
+      "counterexample": "In the hypothetical exercise, encourage replacement of functional gear solely because a new season starts.",
+      "sources": [
+        "P1",
+        "P2",
+        "P4",
+        "S1"
+      ]
+    },
+    {
+      "id": "bounded-promises",
+      "layer": 4,
+      "name": "Bound promises by their evidence — study rule",
+      "definition": "Do not turn a qualified public service or environmental statement into an unconditional promise.",
+      "situations": [
+        "Service copy",
+        "Environmental claims"
+      ],
+      "tradeoff": "Accept a narrower message when support for a stronger promise is absent.",
+      "example": "Describe an available repair inquiry without promising a universal price or deadline.",
+      "counterexample": "Promise zero impact or guaranteed free repair within 48 hours based on a general service page.",
+      "sources": [
+        "P2",
+        "P3",
+        "P4",
+        "S1"
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "id": "absolute-impact-warning",
+      "kind": "forbidden_terms",
+      "principle": "bounded-promises",
+      "contexts": [
+        "marketing_copy"
+      ],
+      "message": "Study warning: an absolute environmental claim needs source review.",
+      "suggestion": "Remove the absolute claim or obtain evidence supporting its exact scope; do not invent a percentage.",
+      "terms": [
+        "zero impact"
+      ]
+    }
+  ]
+}
