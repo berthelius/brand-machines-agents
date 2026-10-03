@@ -1,0 +1,81 @@
+[
+  {
+    "id": "repair-first",
+    "scenario": "A US reader owns a jacket with a repairable zipper defect. The exercise stipulates repairability; no real product has been examined.",
+    "artifact": {
+      "type": "copy",
+      "context": "marketing_copy",
+      "language": "en",
+      "content": "Before replacing a jacket with a repairable zipper, explore a repair. Check the appropriate service route and terms before sending it in.",
+      "claims": []
+    },
+    "expected_mechanical_status": "needs_evidence",
+    "semantic_review_target": "approved"
+  },
+  {
+    "id": "replacement-default",
+    "scenario": "A US reader owns a functional jacket that still meets their stated need. Only a seasonal change motivates replacement.",
+    "artifact": {
+      "type": "copy",
+      "context": "marketing_copy",
+      "language": "en",
+      "content": "Start the new season with a fresh jacket. Replace the one that still works and make room for the next adventure.",
+      "claims": []
+    },
+    "expected_mechanical_status": "needs_evidence",
+    "semantic_review_target": "revise"
+  },
+  {
+    "id": "absolute-impact",
+    "scenario": "A hypothetical message promotes a Worn Wear purchase using an unsupported absolute environmental claim.",
+    "artifact": {
+      "type": "copy",
+      "context": "marketing_copy",
+      "language": "en",
+      "content": "Buy a used jacket with zero impact on the planet.",
+      "claims": [
+        {
+          "text": "zero impact on the planet",
+          "sources": [
+            "P3"
+          ]
+        }
+      ]
+    },
+    "expected_mechanical_status": "revise",
+    "semantic_review_target": "revise"
+  },
+  {
+    "id": "citation-mismatch",
+    "scenario": "A hypothetical service message cites an authentic general guarantee as support for universal repair terms.",
+    "artifact": {
+      "type": "copy",
+      "context": "marketing_copy",
+      "language": "en",
+      "content": "Every repair is free and completed within 48 hours.",
+      "claims": [
+        {
+          "text": "Every repair is free and completed within 48 hours.",
+          "sources": [
+            "P4"
+          ]
+        }
+      ]
+    },
+    "expected_mechanical_status": "needs_evidence",
+    "semantic_review_target": "needs_evidence"
+  },
+  {
+    "id": "necessary-replacement",
+    "scenario": "The exercise stipulates that the current jacket cannot be restored to the required use after qualified assessment and that the reader still has that need. This is not an actual service or safety assessment.",
+    "artifact": {
+      "type": "copy",
+      "context": "marketing_copy",
+      "language": "en",
+      "content": "If your jacket cannot be restored to the use you need, compare a suitable used option and a durable new replacement. Confirm suitability, availability and service terms before choosing.",
+      "claims": []
+    },
+    "expected_mechanical_status": "needs_evidence",
+    "semantic_review_target": "approved"
+  }
+]
