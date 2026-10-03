@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 464" role="img" aria-labelledby="title description">
+  <title id="title">Brand Machines — Viktor Berthelius</title>
+  <desc id="description">An editorial title beside seven connected layers. The red foundation is the Core; the six layers above it depend on that identity.</desc>
+  <rect width="1200" height="464" fill="#fafafa"/>
+  <g fill="#1A1A1A" font-family="EB Garamond" font-size="144" font-weight="400">
+    <text x="64" y="192">Brand</text>
+    <text x="64" y="320">Machines</text>
+  </g>
+  <text x="72" y="392" fill="#666666" font-family="Source Sans 3" font-size="24">Viktor Berthelius</text>
+  <g fill="none" stroke="#1A1A1A" stroke-width="1.5">
+    <path d="M 936 96 V 112 M 936 144 V 160 M 936 192 V 208 M 936 240 V 256 M 936 288 V 304 M 936 336 V 352"/>
+    <rect x="768" y="64" width="336" height="32"/>
+    <rect x="768" y="112" width="336" height="32"/>
+    <rect x="768" y="160" width="336" height="32"/>
+    <rect x="768" y="208" width="336" height="32"/>
+    <rect x="768" y="256" width="336" height="32"/>
+    <rect x="768" y="304" width="336" height="32"/>
+  </g>
+  <rect x="768" y="352" width="336" height="48" fill="#e63946"/>
+  <g fill="#666666" font-family="Source Code Pro" font-size="16">
+    <text x="1120" y="88">07</text>
+    <text x="1120" y="136">06</text>
+    <text x="1120" y="184">05</text>
+    <text x="1120" y="232">04</text>
+    <text x="1120" y="280">03</text>
+    <text x="1120" y="328">02</text>
+    <text x="1120" y="384">01</text>
+  </g>
+</svg>

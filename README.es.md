@@ -1,53 +1,34 @@
-<p align="center"><a href="README.md" lang="en">English</a> · <strong>Español</strong></p>
-
-<h1 align="center">Brand Machines</h1>
-
-<p align="center"><strong>El método para agentes.</strong></p>
+<p align="right"><a href="README.md" lang="en">English</a> · <strong>Español</strong></p>
 
 <p align="center">
-  Diagnostica, diseña y revisa sistemas de marca.<br>
-  Siete capas, principios de decisión y fuentes verificables.<br>
-  <sub>Un método de Viktor Berthelius.</sub>
+  <img src="assets/readme/fig-hero-agent-edition.svg" width="100%" alt="Brand Machines, de Viktor Berthelius. Siete capas conectadas descansan sobre el Núcleo, representado en rojo.">
+</p>
+
+<h1 align="center">Una marca vive en sus decisiones.</h1>
+
+<p align="center">
+  El método del libro, al alcance de tus agentes.<br>
+  <sub>Diagnosticar la identidad. Generar propuestas. Revisar la coherencia.</sub>
 </p>
 
 <p align="center">
-  <a href="https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0"><img src="https://img.shields.io/badge/v0.2.0-e63946?style=flat-square" alt="Versión 0.2.0"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/licencia-MIT-1a1a1a?style=flat-square" alt="Licencia MIT"></a>
-  <a href="#el-guardián-en-acción"><img src="https://img.shields.io/badge/Python-3.10%2B-1a1a1a?style=flat-square" alt="Comprobador local: Python 3.10 o posterior"></a>
+  <a href="#instalar"><strong>Instalar la skill</strong></a> &nbsp;·&nbsp;
+  <a href="#el-método">El método</a> &nbsp;·&nbsp;
+  <a href="#patagonia">Patagonia</a> &nbsp;·&nbsp;
+  <a href="#el-libro">El libro</a>
 </p>
 
 <p align="center">
-  <a href="#instalar"><strong>Instalar</strong></a> ·
-  <a href="skills/brand-machines/assets/case-studies/patagonia/README.es.md">Caso Patagonia</a> ·
-  <a href="#tres-formas-de-trabajar">Usar</a> ·
-  <a href="#documentación">Documentación</a> ·
-  <a href="https://machines.brthls.com">El libro y el sistema</a>
+  <a href="https://skills.sh/berthelius/brand-machines-agents/brand-machines"><img src="https://img.shields.io/badge/Agent_Skill-ES_%2F_EN-1A1A1A?style=flat-square&amp;labelColor=1A1A1A" alt="Agent Skill en español e inglés"></a>
+  <a href="https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml"><img src="https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml/badge.svg" alt="Estado de CI del comprobador local"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1A1A1A?style=flat-square&amp;labelColor=1A1A1A" alt="Licencia MIT"></a>
 </p>
 
----
+<br>
 
-<p align="center">
-  <strong>Núcleo · Mente · Cuerpo · Piel</strong><br>
-  <strong>Motores · Brand OS · Interconexiones</strong>
-</p>
+Una marca revela su identidad en lo que elige, en lo que rechaza y en lo que está dispuesta a sacrificar. Sus principios deben seguir siendo útiles cuando cambia el encargo.
 
-> El método es compartido. La identidad de cada marca es propia.
-
-Esta skill adapta *Brand Machines: Teoría general de los sistemas de marca* al trabajo de un agente. El paquete de referencia incluido describe Brand Machines; sus fuentes, estilo y decisiones no se imponen a otras marcas.
-
-## Una marca real, decisiones hipotéticas
-
-**[Patagonia: cuándo recomendar comprar menos](skills/brand-machines/assets/case-studies/patagonia/README.es.md).** Cuatro fuentes primarias, cinco mensajes hipotéticos y una comprobación local reproducible, con una revisión semántica comentada por separado.
-
-«Sustituye la que todavía funciona» y «considera sustituirla si no se puede recuperar el uso necesario» conducen a juicios distintos bajo el mismo principio. Una garantía auténtica tampoco respalda una promesa de reparación gratuita en 48 horas. El caso muestra la evidencia de cada decisión y deja vacías cuatro capas sin documentación.
-
-Estudio educativo independiente, sin respaldo de Patagonia. Se ejecuta sin cuenta, claves ni comprar el libro:
-
-```sh
-python3 skills/brand-machines/assets/case-studies/patagonia/run.py
-```
-
-Ejecutar desde la raíz del repositorio clonado. Reproduce las comprobaciones mecánicas de los mensajes en inglés; la [revisión comentada](skills/brand-machines/assets/case-studies/patagonia/semantic-review.md) explica los juicios semánticos y sus límites.
+**Brand Machines** lleva el método de Viktor Berthelius al trabajo de un agente. Dale los documentos de una marca y una tarea: puede examinar su identidad, formular propuestas y revisar decisiones con sus principios y fuentes. El método es compartido. **La identidad de cada marca es propia.**
 
 ## Instalar
 
@@ -57,12 +38,11 @@ Desde el proyecto donde quieras usar la skill:
 npx skills add berthelius/brand-machines-agents --skill brand-machines
 ```
 
-**Disponible en español e inglés.** Instalación verificada en **Codex** y **Claude Code**. El instalador permite elegir los agentes y el alcance.
+<p><strong>Codex</strong> &nbsp;<code>$brand-machines</code> &nbsp;·&nbsp; <strong>Claude Code</strong> &nbsp;<code>/brand-machines</code></p>
 
-| Agente | Invocación |
-| :--- | :--- |
-| Codex | `$brand-machines` |
-| Claude Code | `/brand-machines` |
+Instalación verificada en ambos. Elige el agente y el alcance en el instalador y dale un encargo:
+
+> Aplica Brand Machines a este brief y a los documentos de nuestra marca. Propón tres direcciones distintas, explica el principio y el trade-off de cada una y revisa su coherencia. Separa evidencia, inferencias y decisiones que todavía necesitan aprobación.
 
 <details>
 <summary>Instalación manual y otros agentes</summary>
@@ -71,27 +51,72 @@ Descarga el repositorio o la [release](https://github.com/berthelius/brand-machi
 
 La documentación funciona con cualquier agente capaz de leer esos archivos; la detección automática depende del entorno. Python 3.10 o posterior es necesario solo para ejecutar el comprobador local, que no tiene dependencias externas.
 
-</details>
-
 El agente responde en tu idioma. Para el comprobador local, usa `--language es` o `--language en`: selecciona la identidad y las reglas de ese idioma. Los comandos antiguos sin flag siguen usando el paquete español. Con `--pack`, manda el idioma del paquete.
 
-## Tres formas de trabajar
+</details>
 
-### 01 · Diagnosticar
+<br>
 
-> Usa Brand Machines para diagnosticar esta marca con los documentos adjuntos. Distingue evidencia, inferencias e información pendiente por capa.
+## El método
 
-### 02 · Proponer
+Siete capas conectadas, desde los principios que definen una identidad hasta su contacto con el mundo.
 
-> Aplica Brand Machines a este brief. Deriva la propuesta de nuestros principios, explica el trade-off y señala las decisiones aún no aprobadas.
+| | Capa | Qué examina el agente |
+| :--- | :--- | :--- |
+| 01 | **Núcleo** | Propósito, valores operables y visión. |
+| 02 | **Mente** | Inteligencia distribuida y principios de decisión. |
+| 03 | **Cuerpo** | La arquitectura modular que estructura la expresión. |
+| 04 | **Piel** | La expresión visual, verbal, sonora y táctil. |
+| 05 | **Motores** | Sistemas generativos que producen output de marca. |
+| 06 | **Brand OS** | Workflows e integraciones que orquestan las capas. |
+| 07 | **Interconexiones** | Puntos de contacto con ecosistemas externos. |
 
-### 03 · Revisar
+Una decisión en una capa tiene consecuencias en las demás. El agente sigue esas relaciones, distingue variación expresiva de contradicción y registra lo que la evidencia disponible no permite establecer.
 
-> Actúa como Guardián de esta propuesta. Contrasta las afirmaciones con sus fuentes y la decisión con el Núcleo. Permite variaciones coherentes y sugiere una corrección cuando proceda.
+**Diagnosticar** para entender el sistema. **Proponer** para convertir principios en alternativas. **Revisar** para examinar una pieza y sugerir una corrección. [Leer el método →](skills/brand-machines/references/method.md)
 
-## El Guardián, en acción
+<br>
 
-Una demostración del capítulo 17, después de clonar el repositorio y desde su raíz:
+## Patagonia
+
+### Una chaqueta. Dos decisiones coherentes.
+
+Reparar una chaqueta que todavía puede cumplir su función. Considerar una sustitución cuando no se puede recuperar un uso necesario. El mismo principio puede sostener ambas decisiones; el contexto importa.
+
+El caso sitúa esa distinción junto a otros tres mensajes, entre ellos una afirmación ambiental absoluta y una promesa de reparación que su cita no respalda.
+
+<p>
+  <strong>4 fuentes primarias &nbsp;·&nbsp; 5 situaciones hipotéticas</strong><br>
+  <sub>Un paquete de fuentes, comprobaciones locales registradas, revisión semántica comentada y correcciones propuestas.</sub>
+</p>
+
+**[Leer el caso Patagonia →](skills/brand-machines/assets/case-studies/patagonia/README.es.md)**
+
+Estudio educativo independiente, sin respaldo de Patagonia. El mismo asistente preparó los casos y los comentarios; no constituye una evaluación independiente del modelo. Cuatro capas sin documentación se mantienen explícitamente desconocidas.
+
+<details>
+<summary>Reproducir las comprobaciones locales</summary>
+
+Después de clonar este repositorio, desde su raíz:
+
+```sh
+python3 skills/brand-machines/assets/case-studies/patagonia/run.py
+```
+
+Python 3.10 o posterior, sin dependencias externas ni llamadas a modelos. El script reproduce comprobaciones mecánicas de los mensajes en inglés; la [revisión comentada](skills/brand-machines/assets/case-studies/patagonia/semantic-review.md) contiene los juicios semánticos por separado. El código de salida 0 confirma las comprobaciones del ejercicio, no la aprobación de los mensajes.
+
+</details>
+
+<br>
+
+## El Guardián local
+
+La skill aporta al agente un método para juzgar. El comprobador opcional en Python verifica estructura, integridad de fuentes y reglas explícitas. **Superar esas comprobaciones deja pendiente la revisión semántica.** Las identidades de referencia incluidas describen Brand Machines; su estilo y sus fuentes no se imponen a otras marcas.
+
+<details>
+<summary>Probar el ejemplo del capítulo 17</summary>
+
+Después de clonar el repositorio, desde su raíz:
 
 ```sh
 python3 skills/brand-machines/scripts/bm.py review \
@@ -100,9 +125,9 @@ python3 skills/brand-machines/scripts/bm.py review \
 
 **Pieza:** «La MEJOR oferta del año!!!!»
 
-**Resultado:** `revise`, con `no_superlativos` y `exclamaciones_excesivas`, sus fuentes y sugerencias de revisión. El código de salida 1 es el esperado en este ejemplo.
+**Resultado:** `revise`, con `no_superlativos` y `exclamaciones_excesivas`, sus fuentes y sugerencias de revisión. Se espera el código de salida 1.
 
-**El comprobador aplica reglas explícitas. El agente realiza la revisión semántica.** Una pieza sin incidencias mecánicas devuelve `needs_review`: todavía requiere juicio sobre su coherencia.
+</details>
 
 <details>
 <summary>Validar el paquete, diagnosticar y probar una variación</summary>
@@ -151,40 +176,58 @@ La API expone el mismo comprobador y escucha solo en tu máquina. No necesita cl
 
 </details>
 
-## Documentación
+<br>
 
-| Referencia | Contenido |
+## El libro
+
+<p align="center">
+  <a href="https://machines.brthls.com/#book"><img src="assets/readme/cover-es.webp" width="200" alt="Cubierta de Brand Machines: Teoría general de los sistemas de marca, de Viktor Berthelius."></a>
+</p>
+
+<p align="center">
+  <strong>Brand Machines</strong><br>
+  <em>Teoría general de los sistemas de marca</em><br>
+  Viktor Berthelius
+</p>
+
+El libro desarrolla el argumento: la identidad como sistema generativo, la coherencia mediante principios y la arquitectura que las hace posibles. Este repositorio adapta parte de ese método para agentes. Puedes usar la skill sin comprar el libro.
+
+<p align="center">
+  <a href="https://machines.brthls.com/#book"><strong>Explorar el libro →</strong></a> &nbsp;·&nbsp;
+  <a href="https://machines.brthls.com/">El proyecto</a> &nbsp;·&nbsp;
+  <a href="https://github.com/berthelius">El autor</a>
+</p>
+
+<br>
+
+## Referencias y desarrollo
+
+| Referencia | Punto de partida para… |
 | :--- | :--- |
 | [Método](skills/brand-machines/references/method.md) | Las siete capas y sus relaciones. |
 | [Procedimientos](skills/brand-machines/references/workflows.md) | Diagnóstico, propuesta y revisión. |
-| [Contrato del Guardián](skills/brand-machines/references/review.md) | Criterios, hallazgos y alcance de la revisión. |
-| [Formato del paquete](skills/brand-machines/references/pack.md) | Cómo representar otra identidad y sus fuentes. |
-| [Procedencia editorial](skills/brand-machines/references/provenance.json) | Fuentes de esta adaptación. |
-| [Caso Patagonia](skills/brand-machines/assets/case-studies/patagonia/README.es.md) | Fuentes públicas, cinco situaciones, comprobaciones observadas y juicios con alcance delimitado. |
-| [Contribuir](CONTRIBUTING.md) | Requisitos de evidencia, separación de identidades y validación. |
+| [Contrato del Guardián](skills/brand-machines/references/review.md) | Hallazgos, fuentes y alcance del juicio. |
+| [Formato del paquete](skills/brand-machines/references/pack.md) | La identidad y evidencia de tu propia marca. |
+| [Procedencia editorial](skills/brand-machines/references/provenance.json) | Fuentes y terminología de la adaptación. |
+| [Contribuir](CONTRIBUTING.md) | Casos documentados, correcciones y mejoras de idioma. |
 
 <details>
-<summary>Desarrollo y pruebas</summary>
+<summary>Pruebas y estado de la release</summary>
 
 ```sh
 python3 -m unittest discover -s tests -v
 python3 skills/brand-machines/assets/case-studies/patagonia/run.py
 ```
 
-Las pruebas automatizadas cubren el código local. Los escenarios del [contrato del Guardián](skills/brand-machines/references/review.md) sirven para evaluar por separado el comportamiento del agente. Una suite mecánica verde no acredita una evaluación semántica. [Ver CI](https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml).
+CI se ejecuta en Python 3.10, 3.12 y 3.14. Las pruebas cubren código local, separación de idiomas y ejemplos mecánicos; no acreditan precisión del modelo ni corrección semántica. [Ver CI](https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml).
+
+La última versión etiquetada es [v0.2.0](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0). El árbol actual incorpora además el caso Patagonia, validación estricta de fechas de caducidad y esta presentación. Esas incorporaciones no están en el archivo de v0.2.0.
 
 </details>
-
-La última versión etiquetada es v0.2.0. Este árbol de código incorpora además el caso Patagonia y la validación estricta de fechas de caducidad; esas incorporaciones no están en el archivo de la release v0.2.0. La skill sigue siendo autosuficiente y el comprobador local no necesita dependencias externas.
 
 ---
 
 <p align="center">
-  <strong>Brand Machines</strong><br>
-  <sub>Teoría general de los sistemas de marca · Viktor Berthelius</sub><br><br>
-  <a href="https://machines.brthls.com/#book">El libro</a> ·
-  <a href="https://machines.brthls.com">machines.brthls.com</a> ·
-  <a href="https://www.brthls.com">brthls.com</a>
+  <sub>Un método de <a href="https://www.brthls.com/">Viktor Berthelius</a>. Para leer, utilizar y discutir.</sub><br>
+  <sub>MIT para los archivos originales de esta distribución. El manuscrito completo queda fuera. No se conceden derechos sobre marcas de terceros.</sub>
 </p>
-
-<p align="center"><sub>MIT para los archivos de esta distribución. El manuscrito completo y su repositorio editorial privado quedan fuera de ella. No se conceden derechos sobre marcas de terceros.</sub></p>
