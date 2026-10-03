@@ -61,15 +61,15 @@ El agente responde en tu idioma. Para el comprobador local, usa `--language es` 
 
 Siete capas conectadas, desde los principios que definen una identidad hasta su contacto con el mundo.
 
-| | Capa | Qué examina el agente |
-| :--- | :--- | :--- |
-| 01 | **Núcleo** | Propósito, valores operables y visión. |
-| 02 | **Mente** | Inteligencia distribuida y principios de decisión. |
-| 03 | **Cuerpo** | La arquitectura modular que estructura la expresión. |
-| 04 | **Piel** | La expresión visual, verbal, sonora y táctil. |
-| 05 | **Motores** | Sistemas generativos que producen output de marca. |
-| 06 | **Brand OS** | Workflows e integraciones que orquestan las capas. |
-| 07 | **Interconexiones** | Puntos de contacto con ecosistemas externos. |
+| Capa | Qué examina el agente |
+| :--- | :--- |
+| **Núcleo** | Propósito, valores operables y visión. |
+| **Mente** | Inteligencia distribuida y principios de decisión. |
+| **Cuerpo** | La arquitectura modular que estructura la expresión. |
+| **Piel** | La expresión visual, verbal, sonora y táctil. |
+| **Motores** | Sistemas generativos que producen output de marca. |
+| **Brand OS** | Workflows e integraciones que orquestan las capas. |
+| **Interconexiones** | Puntos de contacto con ecosistemas externos. |
 
 Una decisión en una capa tiene consecuencias en las demás. El agente sigue esas relaciones, distingue variación expresiva de contradicción y registra lo que la evidencia disponible no permite establecer.
 
@@ -168,7 +168,7 @@ La API expone el mismo comprobador y escucha solo en tu máquina. No necesita cl
 <summary>Qué acredita cada comprobación</summary>
 
 | Parte | Acredita | No acredita |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | `validate` | Estructura del paquete e integridad de fuentes | Veracidad de las fuentes |
 | `diagnose` | Cobertura documental por capa | Madurez de la marca |
 | `review` / API | Comprobaciones declaradas y presencia/vigencia de referencias | Coherencia semántica total ni verdad de afirmaciones |

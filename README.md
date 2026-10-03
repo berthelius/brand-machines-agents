@@ -61,15 +61,15 @@ The agent responds in your language. For the local checker, use `--language en` 
 
 Seven connected layers, from the principles that define an identity to its contact with the world.
 
-| | Layer | What the agent examines |
-| :--- | :--- | :--- |
-| 01 | **Core** | Purpose, actionable values and vision. |
-| 02 | **Mind** | Distributed intelligence and decision principles. |
-| 03 | **Body** | The modular architecture that structures expression. |
-| 04 | **Skin** | Visual, verbal, sonic and tactile expression. |
-| 05 | **Engines** | Generative systems that produce brand output. |
-| 06 | **Brand OS** | Workflows and integrations that orchestrate the layers. |
-| 07 | **Interconnections** | Points of contact with external ecosystems. |
+| Layer | What the agent examines |
+| :--- | :--- |
+| **Core** | Purpose, actionable values and vision. |
+| **Mind** | Distributed intelligence and decision principles. |
+| **Body** | The modular architecture that structures expression. |
+| **Skin** | Visual, verbal, sonic and tactile expression. |
+| **Engines** | Generative systems that produce brand output. |
+| **Brand OS** | Workflows and integrations that orchestrate the layers. |
+| **Interconnections** | Points of contact with external ecosystems. |
 
 A decision in one layer has consequences for the others. The agent follows those relationships, distinguishes expressive variation from contradiction, and records what the available evidence cannot establish.
 
@@ -168,7 +168,7 @@ The API runs the same checker and listens only on your machine, using the pack s
 <summary>What each check establishes</summary>
 
 | Part | Establishes | Does not establish |
-| :--- | :--- | :--- |
+| :--- | :--- |
 | `validate` | Pack structure and source integrity | Truth of the sources |
 | `diagnose` | Documentation coverage by layer | Brand maturity |
 | `review` / API | Declared checks and presence/expiry of references | Complete semantic coherence or truth of claims |
