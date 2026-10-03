@@ -122,9 +122,11 @@ def validate_pack(pack, base):
             raise Invalid(f"La fuente cambió: {source['id']}. Revisar antes de actualizar su hash.", f"Source changed: {source['id']}. Review before updating its hash.")
         if "valid_until" in source:
             try:
-                date.fromisoformat(string(source["valid_until"], "valid_until"))
+                expiry = string(source["valid_until"], "valid_until")
+                if date.fromisoformat(expiry).isoformat() != expiry:
+                    raise ValueError("Expected YYYY-MM-DD")
             except ValueError as exc:
-                raise Invalid("valid_until debe ser una fecha ISO válida.", 'valid_until must be a valid ISO date.') from exc
+                raise Invalid("valid_until debe ser una fecha válida YYYY-MM-DD.", 'valid_until must be a valid YYYY-MM-DD date.') from exc
         sources[source["id"]] = source
 
     def refs(values):
