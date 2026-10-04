@@ -4,7 +4,7 @@ description: Diagnose, design and review brand systems with Viktor Berthelius's 
 license: MIT
 metadata:
   author: Viktor Berthelius
-  version: "0.2.0"
+  version: "0.2.1"
   languages: "es,en"
   runtime: "Markdown references; optional local checks use Python 3.10+."
 ---

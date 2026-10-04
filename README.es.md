@@ -47,7 +47,7 @@ Instalación verificada en ambos. Elige el agente y el alcance en el instalador 
 <details>
 <summary>Instalación manual y otros agentes</summary>
 
-Descarga el repositorio o la [release](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0) y copia la carpeta completa `skills/brand-machines` —o `brand-machines` dentro del ZIP— al directorio de skills de tu agente. Conserva `references`, `scripts`, `assets` y `agents` junto a `SKILL.md`.
+Descarga el repositorio o la [release](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.1) y copia la carpeta completa `skills/brand-machines` —o `brand-machines` dentro del ZIP— al directorio de skills de tu agente. Conserva `references`, `scripts`, `assets` y `agents` junto a `SKILL.md`.
 
 La documentación funciona con cualquier agente capaz de leer esos archivos; la detección automática depende del entorno. Python 3.10 o posterior es necesario solo para ejecutar el comprobador local, que no tiene dependencias externas.
 
@@ -221,7 +221,7 @@ python3 skills/brand-machines/assets/case-studies/patagonia/run.py
 
 CI se ejecuta en Python 3.10, 3.12 y 3.14. Las pruebas cubren código local, separación de idiomas y ejemplos mecánicos; no acreditan precisión del modelo ni corrección semántica. [Ver CI](https://github.com/berthelius/brand-machines-agents/actions/workflows/verify.yml).
 
-La última versión etiquetada es [v0.2.0](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.0). El árbol actual incorpora además el caso Patagonia, validación estricta de fechas de caducidad y esta presentación. Esas incorporaciones no están en el archivo de v0.2.0.
+[v0.2.1](https://github.com/berthelius/brand-machines-agents/releases/tag/v0.2.1) incluye el caso Patagonia autocontenido y la validación estricta de fechas de caducidad. El ZIP de la release contiene la skill bilingüe completa; los archivos de código fuente de GitHub incluyen también esta presentación y las pruebas.
 
 </details>
 
