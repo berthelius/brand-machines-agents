@@ -1,7 +1,7 @@
 {
   "author": "Viktor Berthelius",
   "method": "Brand Machines",
-  "agent_edition": "0.2.0",
+  "agent_edition": "0.2.1",
   "source_snapshot": "2026-09-27",
   "source_commit": "82000712d3d8dc662010e1645f0ad8c77a256768",
   "note": "Fuentes del manuscrito privado. Esta distribución contiene una adaptación operativa y extractos limitados, no el libro completo. Los hashes identifican la fuente editorial; no dan acceso al manuscrito.",
